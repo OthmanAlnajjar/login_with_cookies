@@ -1,0 +1,215 @@
+/* CSS Stylesheet */
+
+/* Importing the 'Nunito' font from Google Fonts */
+@import url('https://font.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
+
+/* Declearing some CSS variables to make using easier */
+:root{
+    --green:#27ae60;         /* Define a variable for the green color */
+    --red:#e74c3c;           /* Define a variable for the red color */
+    --light-color:#666;      /* Define a variable for a light color */
+    --light-bg:#eee;         /* Define a variable for a light background color */
+    --black:#444;            /* Define a variable for the black color */
+    --white:#fff;            /* Define a variable for the white color */
+    --box-shadow:0 5px 10px rgba(0,0,0,.8);   /* Define a variable for the box shadow */
+    --border:2px solid var(--black);          /* Define a variable for the border style */
+}
+
+/* Global CSS reset */
+*{
+    font-family: 'Nunito', sans-serif;   /* Apply 'Nunito' font to all elements */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+html{
+    overflow-x:hidden;    /* Hide horizontal scrollbar on the HTML element */
+}
+
+body{
+    background:var(--light-bg);   /* Set the background color of the body to the light background color */
+}
+
+section{
+    padding:20px;         /* Add padding to sections */
+    margin: 0 auto;       /* Center sections horizontally */
+    max-width: 1200px;    /* Limit the maximum width of sections to 1200px */
+}
+
+.message{
+    /* Styling for message container */
+    position:sticky;
+    top:15px;
+    border-radius: 5px;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    border:var(--border);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    margin: 0 auto;
+    max-width: 1200px;
+    animation: fadeIn .4s cubic-bezier(.3,1.41,.4,1.46); /* Apply the fadeIn animation with specific settings */
+} /*                     ↑                ↑  ↑    ↑  ↑
+  explaining the Cubic Bezier values: 
+     .4s  - Defines the duration of the animation
+     0.3 - Defines the intensity of the acceleration at the start 
+     1.41 - Defines the intensity of the deceleration at the end 
+     0.4 - Defines the influence of the acceleration and deceleration on the overall timing 
+     1.46 - Defines the influence of the acceleration and deceleration on the overall timing */
+
+@keyframes fadeIn {
+    /* Keyframe animation for fading in */
+    0% {
+        opacity: 0;                       /* Starting opacity of 0 (fully transparent) */
+        transform: translateY(-10px) scale(0.7);  /* Starting position and scale of the container */
+    }
+    100% {
+        opacity: 1;                       /* Ending opacity of 1 (fully opaque) */
+        transform: translateY(0) scale(1); /* Ending position and scale of the container */
+    }
+}
+
+.message span{
+    font-size: 20px;
+    color: var(--black);
+}
+
+.message i{
+    /* Styling for the close icon in the message container */
+    color: var(--red);
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.message i:hover{
+    color: var(--black);
+}
+
+.btn,
+.delete-btn{
+    /* Styling for buttons */
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px 30px;
+    font-size: 20px;
+    color:var(--white);
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.btn{
+    background-color: var(--green);   /* Set button background color to green */
+}
+
+.delete-btn{
+    background-color: var(--red);     /* Set delete button background color to red */
+}
+
+.btn:hover,
+.delete-btn:hover{
+    background-color: var(--black);   /* Change background color on hover */
+}
+
+.form-container{
+    /* Styling for the form container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-bottom:60px;
+}
+
+.form-container form{
+    /* Styling for the registration form */
+    width:500px;
+    background-color: var(--white);
+    border-radius: 5px;
+    border:var(--border);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    text-align: center;
+}
+
+.form-container form h3{
+    /* Styling for form heading */
+    margin-bottom: 10px;
+    font-size: 25px;
+    color:var(--black);
+    text-transform: capitalize;
+}
+
+.form-container form .box{
+    /* Styling for input fields in the form */
+    margin:7px 0;
+    width: 100%;
+    border-radius:5px;
+    background-color: var(--light-bg);
+    border:var(--border);
+    padding: 14px;
+    font-size: 20px;
+    color:var(--black);
+}
+
+.form-container form p{
+    /* Styling for paragraph text in the form */
+    margin-top: 20px;
+    color: var(--light-color);
+    font-size: 20px;
+}
+
+.form-container form p a{
+    /* Styling for links in the form */
+    color:var(--red);
+}
+
+.form-container form p a:hover{
+    color:var(--black);
+    text-decoration: underline;
+}
+
+.content{
+    /* Styling for content container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-bottom:60px;
+}
+
+.content .box{
+    /* Styling for box in the content section */
+    width:500px;
+    background-color: var(--white);
+    border-radius: 5px;
+    border:var(--border);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    text-align: center;
+}
+
+.content .box h3 {
+    /* Styling for heading inside the box */
+    font-size: 25px;
+    color:var(--black);
+    margin-bottom: 10px;
+}
+
+.content .box h3 span{
+    color:var(--green );
+}
+
+.content .box .flex-btn{
+    /* Styling for buttons inside the box */
+    display: flex;
+    gap: 10px;
+}
